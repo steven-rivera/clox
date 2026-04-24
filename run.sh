@@ -9,5 +9,5 @@ outputName="clox"
 #    - error: Any warnings results in compile error
 
 gcc -g -Isrc/headers -Wall -Werror ./src/*.c -o "${outputName}" || exit
-"./${outputName}"
+"./${outputName}" "$@"
 rm "./${outputName}"
