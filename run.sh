@@ -2,6 +2,10 @@
 
 outputName="clox"
 
+if [[ -f $outputName ]]; then
+	rm "${outputName}"
+fi
+
 # -g: Embed debug symbols into the binary
 # -I<dir>: Search <dir> when resolving `#include "..."`
 # -W<option>:
@@ -10,4 +14,4 @@ outputName="clox"
 
 gcc -g -Isrc/headers -Wall -Werror ./src/*.c -o "${outputName}" || exit
 "./${outputName}" "$@"
-rm "./${outputName}"
+rm "${outputName}"
